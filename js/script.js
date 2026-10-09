@@ -4,17 +4,6 @@ jQuery("#js-drawer-icon").on("click", function(e) {
   jQuery("#js-drawer-content").toggleClass("is-checked");
 });
 
-const drawerIcon = document.querySelector("#js-drawer-icon");
-const drawerContent = document.querySelector("#js-drawer-content");
-
-
-document
-.querySelector("#js-drawer-icon").addEventListener("click", function(e) {
-    e.preventDefault();
-    drawerIcon.classList.toggle("is-checked");
-    drawerContent.classList.toggle("is-checked");
-});
-
 // accordion
 
 jQuery(".js-accordion").on("click", function(e) {
