@@ -119,7 +119,7 @@ html {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 40;
+  z-index: 80;
   background: rgba(250, 250, 250, 0.96);
 }
 
@@ -196,18 +196,13 @@ html {
   position: relative;
   z-index: 51;
 }
-.drawer-icon.is-checked .drawer-icon__bar:nth-of-type(1) {
-  top: 10px;
-  -webkit-transform: rotate(30deg);
-          transform: rotate(30deg);
-}
-.drawer-icon.is-checked .drawer-icon__bar:nth-of-type(2) {
-  display: none;
-}
-.drawer-icon.is-checked .drawer-icon__bar:nth-of-type(3) {
-  top: 10px;
-  -webkit-transform: rotate(-30deg);
-          transform: rotate(-30deg);
+.drawer-icon.is-checked {
+  position: fixed;
+  top: 23px;
+  right: 14px;
+  z-index: 101;
+  width: 36px;
+  height: 21px;
 }
 
 .drawer-icon__bar {
@@ -218,16 +213,31 @@ html {
   height: 3px;
   border-radius: 6px;
   background: #111;
-  -webkit-transition: top 0.3s linear, -webkit-transform 0.3s linear;
-  transition: top 0.3s linear, -webkit-transform 0.3s linear;
-  transition: transform 0.3s linear, top 0.3s linear;
-  transition: transform 0.3s linear, top 0.3s linear, -webkit-transform 0.3s linear;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: top 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s linear, -webkit-transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s linear;
+  transition: top 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s linear, -webkit-transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s linear;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), top 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s linear, background-color 0.2s linear;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), top 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s linear, background-color 0.2s linear, -webkit-transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .drawer-icon__bar:nth-of-type(2) {
   top: 9px;
 }
 .drawer-icon__bar:nth-of-type(3) {
   top: 18px;
+}
+.drawer-icon.is-checked .drawer-icon__bar:nth-of-type(1) {
+  top: 9px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.drawer-icon.is-checked .drawer-icon__bar:nth-of-type(2) {
+  opacity: 0;
+}
+.drawer-icon.is-checked .drawer-icon__bar:nth-of-type(3) {
+  top: 9px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .drawer-content {
@@ -237,14 +247,14 @@ html {
   top: 0;
   right: 0;
   background: #F7BA1A;
-  z-index: 50;
+  z-index: 70;
   padding: 86px 40px 40px;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
-  -webkit-transition: -webkit-transform 0.3s linear;
-  transition: -webkit-transform 0.3s linear;
-  transition: transform 0.3s linear;
-  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+  -webkit-transition: -webkit-transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: -webkit-transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), -webkit-transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .drawer-content.is-checked {
   -webkit-transform: translateX(0);

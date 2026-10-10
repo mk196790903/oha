@@ -4,6 +4,11 @@ jQuery("#js-drawer-icon").on("click", function(e) {
   jQuery("#js-drawer-content").toggleClass("is-checked");
 });
 
+jQuery(".drawer-content__link, .drawer-content__button .button").on("click", function() {
+  jQuery("#js-drawer-icon").removeClass("is-checked");
+  jQuery("#js-drawer-content").removeClass("is-checked");
+});
+
 // accordion
 
 jQuery(".js-accordion").on("click", function(e) {
